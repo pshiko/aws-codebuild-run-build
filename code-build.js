@@ -173,9 +173,16 @@ function githubInputs() {
     core.getInput("compute-type-override", { required: false }) || undefined;
 
   const environmentTypeOverride =
-    core.getInput("environment-type-override", { required: false }) || undefined;
-  const imageOverride = 
+    core.getInput("environment-type-override", { required: false }) ||
+    undefined;
+  const imageOverride =
     core.getInput("image-override", { required: false }) || undefined;
+  let gitSubmodulesConfigOverride =
+    core.getInput("git-submodules-config-override", { required: false }) ||
+    undefined;
+  if (gitSubmodulesConfigOverride != undefined) {
+    gitSubmodulesConfigOverride = JSON.parse(gitSubmodulesConfigOverride);
+  }
 
   const envPassthrough = core
     .getInput("env-vars-for-codebuild", { required: false })
@@ -192,6 +199,7 @@ function githubInputs() {
     computeTypeOverride,
     environmentTypeOverride,
     imageOverride,
+    gitSubmodulesConfigOverride,
     envPassthrough,
   };
 }

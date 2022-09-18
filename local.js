@@ -8,7 +8,16 @@ const cb = require("./code-build");
 const assert = require("assert");
 const yargs = require("yargs");
 
-const { projectName, buildspecOverride, computeTypeOverride, environmentTypeOverride, imageOverride, gitSubmodulesConfigOverride, envPassthrough, remote } = yargs
+const {
+  projectName,
+  buildspecOverride,
+  computeTypeOverride,
+  environmentTypeOverride,
+  imageOverride,
+  gitSubmodulesConfigOverride,
+  envPassthrough,
+  remote,
+} = yargs
   .option("project-name", {
     alias: "p",
     describe: "AWS CodeBuild Project Name",
@@ -22,23 +31,27 @@ const { projectName, buildspecOverride, computeTypeOverride, environmentTypeOver
   })
   .option("compute-type-override", {
     alias: "c",
-    describe: "The name of a compute type for this build that overrides the one specified in the build project.",
+    describe:
+      "The name of a compute type for this build that overrides the one specified in the build project.",
     type: "string",
   })
   .option("environment-type-override", {
     alias: "et",
-    describe: "A container type for this build that overrides the one specified in the build project.",
+    describe:
+      "A container type for this build that overrides the one specified in the build project.",
     type: "string",
   })
   .option("image-override", {
     alias: "i",
-    describe: "The name of an image for this build that overrides the one specified in the build project.",
+    describe:
+      "The name of an image for this build that overrides the one specified in the build project.",
     type: "string",
   })
   .option("git-submodules-config-override", {
     alias: "gs",
-    describe: "Information about the Git submodules configuration for this build of an AWS CodeBuild build project.",
-    type: "map",
+    describe:
+      "Information about the Git submodules configuration for this build of an AWS CodeBuild build project.",
+    type: "string",
   })
   .option("env-vars-for-codebuild", {
     alias: "e",
