@@ -206,6 +206,7 @@ function inputs2Parameters(inputs) {
     computeTypeOverride,
     environmentTypeOverride,
     imageOverride,
+    gitSubmodulesConfigOverride,
     envPassthrough = [],
   } = inputs;
 
@@ -229,6 +230,7 @@ function inputs2Parameters(inputs) {
     computeTypeOverride,
     environmentTypeOverride,
     imageOverride,
+    gitSubmodulesConfigOverride,
     environmentVariablesOverride,
   };
 }
